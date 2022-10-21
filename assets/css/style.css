@@ -1,4 +1,29 @@
 
+/* Gooogle fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+/* Global styles*/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body {
+    color: black;
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+    background: radial-gradient(#f8b679, #ff7300) no-repeat center;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+h1,h2,h3 {
+    text-align: center;
+}
+
+/* Grid*/
 
 .grid-parent-container {
     display: grid;
@@ -13,24 +38,4 @@
     .playground-grid-child-container { grid-area: 3 / 2 / 7 / 5; }
     .leaderboard-grid-child-container{ grid-area: 7 / 3 / 8 / 4; }
     .footer-grid-child-container{ grid-area: 8 / 1 / 9 / 6; }
-
-    .header-grid-child-container{
-        color: red;
-    }
-
-    .scoreboard-grid-child-container {
-        background-color: green;
-    }
-
-    .playground-grid-child-container {
-        background-color: blue;
-    }
-
-    .leaderboard-child-container {
-        background-color: rgb(255, 0, 221);
-    }
-
-    .footer-grid-child-container {
-        background-color: rgb(0, 225, 255);
-    }
 
