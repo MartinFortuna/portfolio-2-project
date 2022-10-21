@@ -85,7 +85,7 @@ animation: shake 1.5s infinite;
     .leaderboard-grid-child-container{ grid-area: 7 / 3 / 8 / 4; }
     .footer-grid-child-container{ grid-area: 8 / 1 / 9 / 6; }
 
-    
+
 /* Scoreboard  */
 
 .scoreboard-grid-child-container {
