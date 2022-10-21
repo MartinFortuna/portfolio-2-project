@@ -72,6 +72,9 @@ animation: shake 1.5s infinite;
 /* Grid*/
 
 .grid-parent-container {
+    width: 100vw;
+    height: 100vh;
+    max-width: 2000px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(8, 1fr);
@@ -111,7 +114,75 @@ animation: shake 1.5s infinite;
     margin-left: 5px;
     font-size: 2em;
   }
-  
-  .cpu-score {
+
+  .username, .round-name, .cpu-name {
+    margin-left: 5px;
+  }
+
+  .cpu-name {
     margin-right: 5px;
   }
+  
+  .user-score, .cpu-score, .round-count {
+    margin-right: 5px;
+  }
+
+/* Playground */
+
+.playground-grid-child-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.image-container{
+    position: relative;
+    height: 400px;
+    width: auto;
+  }
+
+.main-image {
+    width: 250px;
+    height: 250px;
+    margin-top: 7rem;
+  }
+
+.spock, .rock, .lizard, .paper, .scissors{
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: #f8b679;
+    border: 2px solid;
+    position: absolute;
+    overflow: hidden;
+  }
+
+  .user-option-img:hover {
+    transform: scale(1.1);
+  }
+
+  .spock{
+    top: 5%;
+    left: 33%
+  }
+  
+  .rock {
+    top: 29%;
+    left: -35%;
+  }
+  
+  .lizard {
+    top: 29%;
+    right: -35%;
+  }
+  
+  .paper {
+    top: 69%;
+    right: -35%;
+  }
+  
+  .scissors {
+    top: 69%;
+    left: -35%;
+  }
+  
