@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sheldon's game</title>
 </head>
-<body class="parent-grid-container">
+<body class="grid-parent-container">
   <div>
     <!-- Page loading section -->
     <div class="preloader">
@@ -14,12 +14,26 @@
         <p class="preloader-text"> Loading...</p>
     </div>
     <!-- Landing page section -->
-    <div class="header-child-grid-container">
+    <div class="header-grid-child-container">
         <header class="header">
             <h1>Sheldon's game</h1>
             <h2 class="game-name">Rock, Paper, Scissors, Lizard and Spock</h2> 
         </header>
     </div>
+    <div class="scoreboard-grid-child-container" class="score-count">
+        <div class="user-score-count">
+           <h2 class="username">You</h2>
+           <p class="user-score">0</p>
+        </div>
+        <div class="round-count-container">
+           <h2 class="round-name">Round</h2>
+           <p class="round-count">0</p>
+        </div>
+        <div class="cpu-score-count">
+           <p class="cpu-score">0</p>
+           <h2 class="cpu-name">Cpu</h2>
+        </div>
+     </div>
   </div>
     
 </body>
