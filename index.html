@@ -1,40 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sheldon's game</title>
-</head>
-<body class="grid-parent-container">
-  <div>
-    <!-- Page loading section -->
-    <div class="preloader">
-        <img class="preloader-icon" src="" alt="">
-        <p class="preloader-text"> Loading...</p>
-    </div>
-    <!-- Landing page section -->
-    <div class="header-grid-child-container">
-        <header class="header">
-            <h1>Sheldon's game</h1>
-            <h2 class="game-name">Rock, Paper, Scissors, Lizard and Spock</h2> 
-        </header>
-    </div>
-    <div class="scoreboard-grid-child-container" class="score-count">
-        <div class="user-score-count">
-           <h2 class="username">You</h2>
-           <p class="user-score">0</p>
-        </div>
-        <div class="round-count-container">
-           <h2 class="round-name">Round</h2>
-           <p class="round-count">0</p>
-        </div>
-        <div class="cpu-score-count">
-           <p class="cpu-score">0</p>
-           <h2 class="cpu-name">Cpu</h2>
-        </div>
-     </div>
-  </div>
-    
-</body>
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Sheldon's game</title>
+   </head>
+   <body>
+      <div class="grid-parent-container">
+         <!-- Page loading section -->
+         <div class="preloader">
+            <img class="preloader-icon" src="./assets/images/atom.png" alt="Big Bang Theory atom preloader image">
+            <p class="preloader-text"> Loading...</p>
+         </div>
+         <!-- Landing page section -->
+         <div class="header-grid-child-container">
+            <header class="header">
+               <h1>Sheldon's game</h1>
+               <h2 class="game-name">Rock, Paper, Scissors, Lizard and Spock</h2>
+            </header>
+         </div>
+         <div class="scoreboard-grid-child-container" class="score-count">
+            <div class="user-score-count">
+               <h2 class="username">You</h2>
+               <p class="user-score">0</p>
+            </div>
+            <div class="round-count-container">
+               <h2 class="round-name">Round</h2>
+               <p class="round-count">0</p>
+            </div>
+            <div class="cpu-score-count">
+               <p class="cpu-score">0</p>
+               <h2 class="cpu-name">Cpu</h2>
+            </div>
+         </div>
+         <div class="scoreboard-grid-child-container" class="playground">
+            <button type="button" class="spock">
+            <img class="user-option-img" src="assets/images/hand_spock_icon.png" alt="spock image">
+            </button>
+            <button type="button" class="scissors">
+            <img class="user-option-img" src="assets/images/hand_scissors_icon.png" alt="scissors image">
+            </button>
+            <button type="button" class="rock">
+            <img class="user-option-img" src="assets/images/hand_rock_icon.png" alt="rock image">
+            </button>
+            <button type="button" class="lizard">
+            <img class="user-option-img" src="assets/images/hand_lizard_icon.png" alt="lizard image">
+            </button>
+            <button type="button" class="paper">
+            <img class="user-option-img" src="assets/images/hand_paper_icon.png" alt="paper image">
+            </button>
+         </div>
+      </div>
+   </body>
 </html>
