@@ -16,7 +16,6 @@ body {
     font-weight: 400;
     background: radial-gradient(#f8b679, #ff7300) no-repeat center;
     overflow-x: hidden;
-    position: relative;
   }
 
 h1,h2,h3 {
@@ -86,4 +85,33 @@ animation: shake 1.5s infinite;
     .leaderboard-grid-child-container{ grid-area: 7 / 3 / 8 / 4; }
     .footer-grid-child-container{ grid-area: 8 / 1 / 9 / 6; }
 
+    
+/* Scoreboard  */
 
+.scoreboard-grid-child-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .scoreboard-grid-child-container h2 {
+    font-size: 2em;
+  }
+
+  .scoreboard-grid-child-container div {
+    border:1px solid black;
+  }
+  
+  .user-score-count, .cpu-score-count, .round-count-container{
+    display: flex;
+  }
+  
+  .user-score, .cpu-score, .round-count {
+    justify-content: space-evenly;
+    margin-left: 5px;
+    font-size: 2em;
+  }
+  
+  .cpu-score {
+    margin-right: 5px;
+  }
