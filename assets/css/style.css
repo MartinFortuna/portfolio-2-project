@@ -18,6 +18,10 @@ body {
     overflow-x: hidden;
   }
 
+h1 {
+    font-size: 50px;
+}
+
 h1,h2,h3 {
     text-align: center;
 }
@@ -91,32 +95,38 @@ animation: shake 1.5s infinite;
 
 /* Scoreboard  */
 
-.scoreboard-grid-child-container {
+
+.scoreboard, .round-count-container{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
   }
 
-  .scoreboard-grid-child-container h2 {
+  .scoreboard h2 {
     font-size: 2em;
   }
-
-  .scoreboard-grid-child-container div {
-    border:1px solid black;
-  }
   
-  .user-score-count, .cpu-score-count, .round-count-container{
+  .user-score-count, .cpu-score-count, .versus-container{
     display: flex;
   }
+
+  .versus-container {
+    margin-right: 40px;
+    margin-left: 40px;
+  }
   
-  .user-score, .cpu-score, .round-count {
-    justify-content: space-evenly;
+  .user-score, .cpu-score, .round-count, .round-count {
     margin-left: 5px;
+    margin-right: 5px;
     font-size: 2em;
   }
 
-  .username, .round-name, .cpu-name {
+  .versus-name, .cpu-name, .round-name {
     margin-left: 5px;
+  }
+
+  .username {
+    margin-left: 40px;
   }
 
   .cpu-name {
@@ -157,8 +167,13 @@ animation: shake 1.5s infinite;
     overflow: hidden;
   }
 
+  .user-option-img {
+    width: 65%;
+    height: 65%;
+  }
+
   .user-option-img:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
 
   .spock{
@@ -186,3 +201,29 @@ animation: shake 1.5s infinite;
     left: -35%;
   }
   
+  /* Leaderboard */
+
+  .leaderboard-grid-child-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  .btn-leaderboard {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: #f8b679;
+    border: 2px solid;
+    position: absolute;
+    overflow: hidden;
+  }
+
+  .leaderboard-option-img {
+    width: 80%;
+    height: 80%;
+  }
+
+  .leaderboard-option-img:hover {
+    transform: scale(1.1);
+  }
