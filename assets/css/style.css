@@ -1,0 +1,36 @@
+
+
+.grid-parent-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+    
+    .header-grid-child-container { grid-area: 1 / 1 / 2 / 6; }
+    .scoreboard-grid-child-container{ grid-area: 2 / 3 / 3 / 4; }
+    .playground-grid-child-container { grid-area: 3 / 2 / 7 / 5; }
+    .leaderboard-grid-child-container{ grid-area: 7 / 3 / 8 / 4; }
+    .footer-grid-child-container{ grid-area: 8 / 1 / 9 / 6; }
+
+    .header-grid-child-container{
+        color: red;
+    }
+
+    .scoreboard-grid-child-container {
+        background-color: green;
+    }
+
+    .playground-grid-child-container {
+        background-color: blue;
+    }
+
+    .leaderboard-child-container {
+        background-color: rgb(255, 0, 221);
+    }
+
+    .footer-grid-child-container {
+        background-color: rgb(0, 225, 255);
+    }
+
