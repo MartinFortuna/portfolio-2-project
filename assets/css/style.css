@@ -249,10 +249,19 @@ animation: shake 1.5s infinite;
 
 /* For medium screen sizes from 529px wide and down */
 @media screen and (max-width: 529px){
-  
-    .score-container, .playground, .game-rules {
-      height: 300px;
-    }
+    .grid-parent-container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(7, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        }
+        
+        .header-grid-child-container { grid-area: 1 / 1 / 2 / 6; }
+        .scoreboard-grid-child-container{ grid-area: 2 / 3 / 3 / 4; }
+        .playground-grid-child-container { grid-area: 3 / 2 / 6 / 5; }
+        .leaderboard-grid-child-container { grid-area: 6 / 3 / 7 / 4; }
+        .footer-grid-child-container{ grid-area: 7 / 1 / 8 / 6; }
   
     .main-image {
       width: 150px;
@@ -309,5 +318,39 @@ animation: shake 1.5s infinite;
     
   
   }
+
+  /* For medium screen sizes from 330px wide and down */
+@media screen and (max-width: 330px){
+    h1 {
+        font-size: 35px;
+    }
+
+    h2 {
+        font-size: 15px;
+    }   
+
+    .scoreboard-grid-child-container {
+        margin-top: 5px;
+    }
+
+    .scoreboard h2 {
+        font-size: 1.3em;
+      }
+
+      .versus-container {
+        margin-right: 15px;
+        margin-left: 15px;
+      }
+      
+      .user-score, .cpu-score, .round-count, .round-count {
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size: 1.3em;
+      }
+    
+    .username {
+        margin-left: 20px;
+    }
+}
   
 
