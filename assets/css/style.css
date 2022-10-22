@@ -319,7 +319,7 @@ animation: shake 1.5s infinite;
   
   }
 
-  /* For medium screen sizes from 330px wide and down */
+  /* For small screen sizes from 330px wide and down */
 @media screen and (max-width: 330px){
     h1 {
         font-size: 35px;
