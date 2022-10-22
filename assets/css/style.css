@@ -1,4 +1,3 @@
-
 /* Gooogle fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
 
@@ -245,4 +244,70 @@ animation: shake 1.5s infinite;
     padding: 25px;
     color: black;
   }
+
+  /* Media queries*/
+
+/* For medium screen sizes from 529px wide and down */
+@media screen and (max-width: 529px){
+  
+    .score-container, .playground, .game-rules {
+      height: 300px;
+    }
+  
+    .main-image {
+      width: 150px;
+      height: 150px;
+      margin-top: 7rem;
+      position: relative;
+    }
+  
+    .user-option-img {
+      width: 50%;
+      height: 50%;
+      background-color: transparent;
+    }
+  
+    .btn-scoreboard {
+      margin-right: 5px;
+    }
+  
+    .spock, .rock, .lizard, .paper, .scissors{
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      background-color: #f8b679;
+      border: 3.5px solid;
+      border-color: black;
+      position: absolute;
+      overflow: hidden;
+    }
+    
+    .spock{
+      top: 10.5%;
+      left: 35%
+    }
+    
+    .rock {
+      top: 25%;
+      left: -30%;
+    }
+    
+    .lizard {
+      top: 25%;
+      right: -30%;
+    }
+    
+    .paper {
+      top: 55%;
+      right: -30%;
+    }
+    
+    .scissors {
+      top: 55%;
+      left: -30%;
+    }
+    
+  
+  }
+  
 
