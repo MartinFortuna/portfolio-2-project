@@ -77,7 +77,6 @@ animation: shake 1.5s infinite;
 .grid-parent-container {
     width: 100vw;
     min-height: 100vh;
-    max-width: 2000px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(8, 1fr);
@@ -148,13 +147,9 @@ animation: shake 1.5s infinite;
 
 .image-container{
     position: relative;
-    height: 400px;
-    width: auto;
   }
 
 .main-image {
-    width: 250px;
-    height: 250px;
     margin-top: 7rem;
   }
 
@@ -266,7 +261,7 @@ animation: shake 1.5s infinite;
     .main-image {
       width: 150px;
       height: 150px;
-      margin-top: 7rem;
+      margin-top:4rem;
       position: relative;
     }
   
@@ -292,28 +287,28 @@ animation: shake 1.5s infinite;
     }
     
     .spock{
-      top: 10.5%;
-      left: 35%
+      top: 1%;
+      left: 33%
     }
     
     .rock {
-      top: 25%;
-      left: -30%;
+      top: 28%;
+      left: -34%;
     }
     
     .lizard {
-      top: 25%;
-      right: -30%;
+      top: 28%;
+      right: -34%;
     }
     
     .paper {
-      top: 55%;
-      right: -30%;
+      top: 73%;
+      right: -36%;
     }
     
     .scissors {
-      top: 55%;
-      left: -30%;
+      top: 73%;
+      left: -36%;
     }
     
   
@@ -353,4 +348,3 @@ animation: shake 1.5s infinite;
     }
 }
   
-
