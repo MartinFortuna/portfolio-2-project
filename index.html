@@ -16,7 +16,20 @@
             <img class="preloader-icon" src="./assets/images/atom.png" alt="Big Bang Theory atom preloader image">
             <p class="preloader-text"> Loading...</p>
          </div>
+         
          <!-- Landing page section -->
+         <!-- Username Modal
+            <div class="username-modal">
+               <div class="modal-content">
+                        <h2>Sheldon challenges you!</h2>
+                        <br>
+                        <form method="get" action="index.html">
+                           <label for="username">Enter your nickname:</label><br>
+                           <input type="text" id="username" name="username" value="nickname" required/><br><br>
+                           <input type="submit" value="Let's play!" class="user-name">
+                        </form>
+               </div>
+            </div>-->
          <div class="header-grid-child-container">
             <header>
                <h1>Sheldon's game</h1>
@@ -29,59 +42,182 @@
                <p class="round-count">0</p>
             </div>
             <div class="scoreboard">
-            <div class="user-score-count">
-               <h2 class="username">You</h2>
-               <p class="user-score">0</p>
-            </div>
-            <div class="versus-container">
-               <h2 class="versus-name">VS</h2>
-            </div>
-            <div class="cpu-score-count">
-               <h2 class="cpu-name">Sheldon</h2>
-               <p class="cpu-score">0</p>
-            </div>
+               <div class="user-score-count">
+                  <h2 class="username">You</h2>
+                  <p class="user-score">0</p>
+               </div>
+               <div class="versus-container">
+                  <h2 class="versus-name">VS</h2>
+               </div>
+               <div class="cpu-score-count">
+                  <h2 class="cpu-name">Sheldon</h2>
+                  <p class="cpu-score">0</p>
+               </div>
             </div>
          </div>
          <div class="playground-grid-child-container">
-          <div class="image-container">
-            <img class="main-image" src="./assets/images/atom.png" alt="Big Bang Theory atom image">
-            <button type="button" class="spock">
-            <img class="user-option-img" src="assets/images/hand_spock_icon.png" alt="spock hand gesture image">
-            </button>
-            <button type="button" class="scissors">
-            <img class="user-option-img" src="assets/images/hand_scissors_icon.png" alt="scissors hand gesture image">
-            </button>
-            <button type="button" class="rock">
-            <img class="user-option-img" src="assets/images/hand_rock_icon.png" alt="rock hand gesture image">
-            </button>
-            <button type="button" class="lizard">
-            <img class="user-option-img" src="assets/images/hand_lizard_icon.png" alt="lizard hand gesture image">
-            </button>
-            <button type="button" class="paper">
-            <img class="user-option-img" src="assets/images/hand_paper_icon.png" alt="paper hand gesture image">
-            </button>
-          </div>
+            <div class="image-container">
+               <img class="main-image" src="./assets/images/atom.png" alt="Big Bang Theory atom image">
+               <button type="button" class="spock">
+               <img class="user-option-img" src="assets/images/hand_spock_icon.png" alt="spock hand gesture image">
+               </button>
+               <button type="button" class="scissors">
+               <img class="user-option-img" src="assets/images/hand_scissors_icon.png" alt="scissors hand gesture image">
+               </button>
+               <button type="button" class="rock">
+               <img class="user-option-img" src="assets/images/hand_rock_icon.png" alt="rock hand gesture image">
+               </button>
+               <button type="button" class="lizard">
+               <img class="user-option-img" src="assets/images/hand_lizard_icon.png" alt="lizard hand gesture image">
+               </button>
+               <button type="button" class="paper">
+               <img class="user-option-img" src="assets/images/hand_paper_icon.png" alt="paper hand gesture image">
+               </button>
+            </div>
          </div>
          <div class="leaderboard-grid-child-container">
-            <button type="button" class="btn-leaderboard">
-               <img class="leaderboard-option-img" src="assets/images/leaderboard_star_icon.png" alt="Leaderboard">
+            <button id="btn-leaderboard" type="button" class="btn-leaderboard">
+            <img class="leaderboard-option-img" src="assets/images/leaderboard_star_icon.png" alt="Leaderboard">
             </button>
+            <!-- Leaderboard Modal -->
+            <div id="leaderboard-modal" class="modal-background">
+               <!-- Modal content -->
+               <div class="modal-content">
+                  <span class="leaderboard-close">&times;</span>
+                  <h2>Worldwide leaderboard</h2>
+                  <div class="table-container">
+                     <table class="lead-table">
+                        <tr>
+                          <th>Placement</th>
+                          <th>Nickname</th>
+                          <th>Games Won</th>
+                          <th>VS</th>
+                          <th>Sheldon</th>
+                          <th>Games Won</th>
+                        </tr>
+                        <tr>
+                           <td>1st Place</td>
+                           <td>Martin</td>
+                           <td>0</td>
+                           <td>VS</td>
+                           <td>Sheldon</td>
+                           <td>0</td>
+                         </tr>
+                        <tr>
+                          <td>2nd Place</td>
+                          <td>Martin</td>
+                          <td>0</td>
+                          <td>VS</td>
+                          <td>Sheldon</td>
+                          <td>0</td>
+                        </tr>
+                        <tr>
+                           <td>3rd Place</td>
+                           <td>Martin</td>
+                           <td>0</td>
+                           <td>VS</td>
+                           <td>Sheldon</td>
+                           <td>0</td>
+                         </tr>
+                         <tr>
+                           <td>4th Place</td>
+                           <td>Martin</td>
+                           <td>0</td>
+                           <td>VS</td>
+                           <td>Sheldon</td>
+                           <td>0</td>
+                         </tr>
+                         <tr>
+                           <td>5th Place</td>
+                           <td>Martin</td>
+                           <td>0</td>
+                           <td>VS</td>
+                           <td>Sheldon</td>
+                           <td>0</td>
+                         </tr>
+                         <tr>
+                           <td>6th Place</td>
+                           <td>Martin</td>
+                           <td>0</td>
+                           <td>VS</td>
+                           <td>Sheldon</td>
+                           <td>0</td>
+                         </tr>
+                         <tr>
+                           <td>7th Place</td>
+                           <td>Martin</td>
+                           <td>0</td>
+                           <td>VS</td>
+                           <td>Sheldon</td>
+                           <td>0</td>
+                         </tr>
+                         <tr>
+                           <td>8th Place</td>
+                           <td>Martin</td>
+                           <td>0</td>
+                           <td>VS</td>
+                           <td>Sheldon</td>
+                           <td>0</td>
+                         </tr>
+                         <tr>
+                           <td>9th Place</td>
+                           <td>Martin</td>
+                           <td>0</td>
+                           <td>VS</td>
+                           <td>Sheldon</td>
+                           <td>0</td>
+                         </tr>
+                         <tr>
+                           <td>10th Place</td>
+                           <td>Martin</td>
+                           <td>0</td>
+                           <td>VS</td>
+                           <td>Sheldon</td>
+                           <td>0</td>
+                         </tr>
+                      </table>
+                  </div>
+               </div>
+            </div>            
+            <button id="btn-rules" type="button" class="btn-game-rules">
+               <h2>Game Rules</h2>
+            </button>
+            <!-- Rules Modal -->
+            <div id="rules-modal" class="modal-background">
+               <!-- Modal content -->
+               <div class="modal-content">
+                  <span class="rules-close">&times;</span>
+                  <h2>Game Rules</h2>
+                  <div>
+                     <p>Scissors cuts Paper,</p>
+                     <p>Paper covers Rock,</p>
+                     <p>Rock crushes Lizard,</p>
+                     <p>Lizard poisons Spock,</p>
+                     <p>Spock smashes Scissors,</p>
+                     <p>Scissors decapitates Lizard,</p>
+                     <p>Lizard eats Paper,</p>
+                     <p>Paper disproves Spock,</p>
+                     <p>Spock vaporizes Rock,</p>
+                     <p>And as it always has Rock crushes Scissors.</p>
+                  </div>
+               </div>
+            </div>
          </div>
          <div class="footer-grid-child-container">
             <footer>
-                <ul class="social-media">
-                   <li>
-                      <a href="https://github.com/MartinFortuna/portfolio-2-project" target="_blank" rel="noopener" aria-label="Visit my GitHub (opens in a new tab)">
-                      <i class="fa-brands fa-github"></i>
-                      </a>
-                   </li>
-                   <li>
-                      <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram page (opens in a new tab)">
-                      <i class="fa-brands fa-instagram"></i>
-                      </a>
-                   </li>
-                </ul>
-             </footer>
+               <ul class="social-media">
+                  <li>
+                     <a href="https://github.com/MartinFortuna/portfolio-2-project" target="_blank" rel="noopener" aria-label="Visit my GitHub (opens in a new tab)">
+                     <i class="fa-brands fa-github"></i>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram page (opens in a new tab)">
+                     <i class="fa-brands fa-instagram"></i>
+                     </a>
+                  </li>
+               </ul>
+            </footer>
          </div>
       </div>
       <!-- font awesome script -->
