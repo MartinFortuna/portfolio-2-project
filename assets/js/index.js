@@ -266,6 +266,23 @@ async function userRegister(e) {
     }
 }
 
+// Gets leaderboard data
+
+async function checkLeaderboard(data) {
+    const resp = await fetch(`https://sheldonsgame-5552.restdb.io/rest/leaderboard?q=${JSON.stringify(data)}`, {
+        method: "GET",
+        mode: "cors",
+        cache: "no-cache",
+        headers: {
+            "x-apikey": xApiKey,
+            "Content-Type": "application/json"
+        }
+    });
+    
+    const parseData = await resp.json();
+    return (parseData && parseData.length > 0) ? parseData[0] : null;
+}
+
 // Leaderboard modal
 const leadModal = document.getElementById("leaderboard-modal");
 const leadBtn = document.getElementById("btn-leaderboard");
