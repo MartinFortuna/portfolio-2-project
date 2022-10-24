@@ -372,6 +372,23 @@ async function addLeaderboard(data) {
     return (parseData) ? parseData : null;
 }
 
+// Updates leaderboard
+
+async function updateLeaderboard(id, data) {
+    const resp = await fetch(`https://sheldonsgame-5552.restdb.io/rest/leaderboard/${id}`, {
+        method: "PATCH",
+        mode: "cors",
+        cache: "no-cache",
+        headers: {
+            "x-apikey": xApiKey,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    });
+    const parseData = await resp.json();
+    return (parseData) ? parseData : null;
+}
+
 
 
 const rulesModal = document.getElementById("rules-modal");
