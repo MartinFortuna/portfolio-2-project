@@ -300,22 +300,59 @@ async function listLearderboard(data) {
     return (parseData && parseData.length > 0) ? parseData : null;
 }
 
-const leadModal = document.getElementById("leaderboard-modal");
-const leadBtn = document.getElementById("btn-leaderboard");
-var span = document.getElementsByClassName("leaderboard-close")[0];
+// Renders leaderboard data
 
-leadBtn.onclick = function () {
-    leadModal.style.display = "block";
-}
+async function renderLearderboard(data) {
+    const [table, tableElemt] = getValue(`.lead-table`);
+    try {        
+        toggleLoad();
+        const leadboardData = await listLearderboard(data);
+        if (leadboardData == null) {
+            innerHTMLRender(tableElemt, "");
+            return false;
+        }
 
-span.onclick = function () {
-    leadModal.style.display = "none";
-}
+        const tableTRowTHeader = `
+        <tr>
+            <th>Placement</th>
+            <th>Nickname</th>
+            <th>Games Won</th>
+            <th>VS</th>
+            <th>Sheldon</th>
+            <th>Games Won</th>
+        </tr>`;
 
-window.onclick = function (event) {
-    if (event.target == leadModal) {
-        leadModal.style.display = "none";
+        const tableTRowData = `
+        <tr>
+            <td>rank</td>
+            <td>player1</td>
+            <td>points1</td>
+            <td>VS</td>
+            <td>Sheldon</td>
+            <td>points2</td>
+        </tr>`;
+
+        let rank = 1;
+        let tableRows = "";
+        for (const row of leadboardData) {            
+            const render = tableTRowData
+                .replace("rank", `${rank}`)
+                .replace("player1", `${row.player1}`)
+                .replace("points1", `${row.points1}`)
+                .replace("points2", `${row.points2}`);
+            tableRows = `${tableRows}${render}`;
+            rank = rank + 1;
+        }
+        innerHTMLRender(tableElemt, `${tableTRowTHeader}${tableRows}`);
+
+    } catch (error) {
+        innerHTMLRender(tableElemt, "<tr><td>nothing to show :(</td></tr>");
+        console.info(error);
     }
+    finally{
+        toggleLoad();
+    }
+    //<table class="lead-table"></table>
 }
 
 // Game Rules modal
