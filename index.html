@@ -4,32 +4,31 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="Sheldon's game is a website created for playing rock, paper, scissors, lizard and spock game." />
-      <meta name="keywords" content="game, rock, paper, scissors, lizard, spock game" />
+      <meta name="description" content="Sheldon's game is a website created for playing rock, paper, scissors, lizard and spock game.">
+      <meta name="keywords" content="game, rock, paper, scissors, lizard, spock game">
       <link rel="stylesheet" href="assets/css/style.css">
       <title>Sheldon's game</title>
    </head>
    <body>
       <div class="grid-parent-container">
          <!-- Page loading section -->
-         <div class="preloader">
-            <img class="preloader-icon" src="./assets/images/atom.png" alt="Big Bang Theory atom preloader image">
-            <p class="preloader-text"> Loading...</p>
-         </div>
-         
+            <div class="preloader">
+               <img class="preloader-icon" src="./assets/images/atom.png" alt="Big Bang Theory atom preloader image">
+               <p class="preloader-text"> Loading...</p>
+            </div>
          <!-- Landing page section -->
-         <!-- Username Modal
+         <!-- Username Modal -->
             <div class="username-modal">
                <div class="modal-content">
                         <h2>Sheldon challenges you!</h2>
                         <br>
-                        <form method="get" action="index.html">
+                        <form action="#" class="form-user-name">
                            <label for="username">Enter your nickname:</label><br>
-                           <input type="text" id="username" name="username" value="nickname" required/><br><br>
-                           <input type="submit" value="Let's play!" class="user-name">
+                           <input type="text" id="username" name="username" class="user-name-text" required><br><br>
+                           <input type="submit" value="Let's play!" class="user-name">                           
                         </form>
                </div>
-            </div>-->
+            </div>
          <div class="header-grid-child-container">
             <header>
                <h1>Sheldon's game</h1>
@@ -88,100 +87,26 @@
                   <div class="table-container">
                      <table class="lead-table">
                         <tr>
-                          <th>Placement</th>
-                          <th>Nickname</th>
-                          <th>Games Won</th>
-                          <th>VS</th>
-                          <th>Sheldon</th>
-                          <th>Games Won</th>
+                           <th>Placement</th>
+                           <th>Nickname</th>
+                           <th>Games Won</th>
+                           <th>VS</th>
+                           <th>Sheldon</th>
+                           <th>Games Won</th>
                         </tr>
                         <tr>
-                           <td>1st Place</td>
+                           <td>1</td>
                            <td>Martin</td>
                            <td>0</td>
                            <td>VS</td>
                            <td>Sheldon</td>
                            <td>0</td>
-                         </tr>
-                        <tr>
-                          <td>2nd Place</td>
-                          <td>Martin</td>
-                          <td>0</td>
-                          <td>VS</td>
-                          <td>Sheldon</td>
-                          <td>0</td>
                         </tr>
-                        <tr>
-                           <td>3rd Place</td>
-                           <td>Martin</td>
-                           <td>0</td>
-                           <td>VS</td>
-                           <td>Sheldon</td>
-                           <td>0</td>
-                         </tr>
-                         <tr>
-                           <td>4th Place</td>
-                           <td>Martin</td>
-                           <td>0</td>
-                           <td>VS</td>
-                           <td>Sheldon</td>
-                           <td>0</td>
-                         </tr>
-                         <tr>
-                           <td>5th Place</td>
-                           <td>Martin</td>
-                           <td>0</td>
-                           <td>VS</td>
-                           <td>Sheldon</td>
-                           <td>0</td>
-                         </tr>
-                         <tr>
-                           <td>6th Place</td>
-                           <td>Martin</td>
-                           <td>0</td>
-                           <td>VS</td>
-                           <td>Sheldon</td>
-                           <td>0</td>
-                         </tr>
-                         <tr>
-                           <td>7th Place</td>
-                           <td>Martin</td>
-                           <td>0</td>
-                           <td>VS</td>
-                           <td>Sheldon</td>
-                           <td>0</td>
-                         </tr>
-                         <tr>
-                           <td>8th Place</td>
-                           <td>Martin</td>
-                           <td>0</td>
-                           <td>VS</td>
-                           <td>Sheldon</td>
-                           <td>0</td>
-                         </tr>
-                         <tr>
-                           <td>9th Place</td>
-                           <td>Martin</td>
-                           <td>0</td>
-                           <td>VS</td>
-                           <td>Sheldon</td>
-                           <td>0</td>
-                         </tr>
-                         <tr>
-                           <td>10th Place</td>
-                           <td>Martin</td>
-                           <td>0</td>
-                           <td>VS</td>
-                           <td>Sheldon</td>
-                           <td>0</td>
-                         </tr>
-                      </table>
+                     </table>
                   </div>
                </div>
-            </div>            
-            <button id="btn-rules" type="button" class="btn-game-rules">
-               <h2>Game Rules</h2>
-            </button>
+            </div>
+            <button id="btn-rules" type="button" class="btn-game-rules">Game Rules</button>
             <!-- Rules Modal -->
             <div id="rules-modal" class="modal-background">
                <!-- Modal content -->

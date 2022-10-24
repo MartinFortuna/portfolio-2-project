@@ -69,9 +69,6 @@ animation: rotate 2s linear infinite;
 
 /*Username modal*/
 
-/* Modal Content/Box */
-
-
 .username-modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -330,6 +327,21 @@ tr:nth-child(even) {
 
 /* For medium screen sizes from 529px wide and down */
 @media screen and (max-width: 529px){
+
+    /* Preloader*/
+
+.preloader-icon {
+height: 100px;
+width: 100px;
+}
+
+.preloader-text {
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    margin-left: 40%;
+}
+
     .grid-parent-container {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
