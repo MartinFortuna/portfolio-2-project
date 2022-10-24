@@ -164,6 +164,29 @@ function findRuleIndex(player1, player2) {
     return rules().findIndex(s => player1 !== player2 && s.includes(player1) && s.includes(player2));
 }
 
+// Check Winner 
+
+function checkWinner() {
+    const [userValue, userElemt] = parseToIntValue(".user-score");
+    const [cpuValue, cpuElemt] = parseToIntValue(".cpu-score");
+
+    const userObj = JSON.parse(localStorage.getItem("username"));
+
+    let dataObj = {
+        player1: userObj.name,
+        points1: userValue === maxPointsInGame ? 1 : 0,
+        player2: "CPU",
+        points2: cpuValue === maxPointsInGame ? 1 : 0
+    }
+
+    if (userValue === maxPointsInGame || cpuValue === maxPointsInGame) {
+        //show the winner popup
+        //computeLeaderboard
+        rankLeaderboard(dataObj)
+        gameReset();
+    }
+}
+
 
 // Leaderboard modal
 const leadModal = document.getElementById("leaderboard-modal");
