@@ -187,6 +187,20 @@ function checkWinner() {
     }
 }
 
+// Game reset 
+
+function gameReset() {
+    //e.g. = matchResult = { player: 0, cpu:1};    
+    const [userValue, userElemt] = parseToIntValue(".user-score");
+    innerHTMLRender(userElemt, 0);
+
+    const [cpuValue, cpuElemt] = parseToIntValue(".cpu-score");
+    innerHTMLRender(cpuElemt, 0);
+
+    const [roundValue, roundElemt] = parseToIntValue(".round-count");
+    innerHTMLRender(roundElemt, 0);
+}
+
 
 // Leaderboard modal
 const leadModal = document.getElementById("leaderboard-modal");
