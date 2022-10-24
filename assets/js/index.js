@@ -1,14 +1,3 @@
-// Username modal
-/*Request username
-window.addEventListener("load",function(){
-    this.setTimeout(
-        function open(event){
-            document.querySelector(".username-modal").style.display = "block";
-        },1000
-    )
-});
-*/
-
 // Leaderboard modal
 const leadModal = document.getElementById("leaderboard-modal");
 const leadBtn = document.getElementById("btn-leaderboard");

@@ -330,17 +330,17 @@ tr:nth-child(even) {
 
     /* Preloader*/
 
-.preloader-icon {
-height: 100px;
-width: 100px;
-}
+  .preloader-icon {
+   height: 100px;
+   width: 100px;
+  }
 
-.preloader-text {
+  .preloader-text {
     font-size: 20px;
     height: 50px;
     width: 50px;
     margin-left: 40%;
-}
+  }
 
     .grid-parent-container {
         display: grid;
