@@ -283,7 +283,23 @@ async function checkLeaderboard(data) {
     return (parseData && parseData.length > 0) ? parseData[0] : null;
 }
 
-// Leaderboard modal
+// Lists leaderboard data
+
+async function listLearderboard(data) {
+    
+    const resp = await fetch(`https://sheldonsgame-5552.restdb.io/rest/leaderboard?max=10&q={}&h={"$orderby":{"points1":-1,"points2":1}}`, {
+        method: "GET",
+        mode: "cors",
+        cache: "no-cache",
+        headers: {
+            "x-apikey": xApiKey,
+            "Content-Type": "application/json"
+        }
+    });
+    const parseData = await resp.json();
+    return (parseData && parseData.length > 0) ? parseData : null;
+}
+
 const leadModal = document.getElementById("leaderboard-modal");
 const leadBtn = document.getElementById("btn-leaderboard");
 var span = document.getElementsByClassName("leaderboard-close")[0];
@@ -303,6 +319,7 @@ window.onclick = function (event) {
 }
 
 // Game Rules modal
+
 const rulesModal = document.getElementById("rules-modal");
 const rulesBtn = document.getElementById("btn-rules");
 var span = document.getElementsByClassName("rules-close")[0];
