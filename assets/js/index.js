@@ -28,6 +28,143 @@ function toggleLoad() {
     }
 }
 
+// Core game
+
+function rules() {
+    return [
+        "Scissors cuts Paper",
+        "Paper covers Rock",
+        "Rock crushes Lizard",
+        "Lizard poisons Spock",
+        "Spock smashes Scissors",
+        "Scissors decapitates Lizard",
+        "Lizard eats Paper",
+        "Paper disproves Spock",
+        "Spock vaporizes Rock",
+        "Rock crushes Scissors"
+    ];
+}
+
+function choices() {
+    //.map runs each line of the array
+    //x.split(" ") breaks on " ", giving an array of 3 itens, e.g. ["Scissors", "cuts", "Paper"]
+    //x.split(" ")[0] gets the 1st possition, "Scissors"
+    //new Set(...), creates an object that remove duplicated values
+    return [...new Set(rules().map(x => x.split(" ")[0]))];
+}
+
+function runMatch(e) {
+    //spock, paper ...
+    const userInputChoice = e.currentTarget.className;
+    const userInputChoiceIndex = choices().findIndex(s => s.toLocaleLowerCase() === userInputChoice);
+    const userChoiceValue = choices()[userInputChoiceIndex];
+    const cpuChoiceValue = choices()[cpuChoiceIndex()];
+    const matchEvolIndex = findRuleIndex(userChoiceValue, cpuChoiceValue);
+    const matchPoint = points(matchEvolIndex, userChoiceValue, cpuChoiceValue);
+    const matchScoreCount = {
+        player: matchPoint[userChoiceValue],
+        cpu: matchPoint[cpuChoiceValue]
+    };
+
+    console.info(`${userChoiceValue} vs ${cpuChoiceValue}`);
+    console.info(matchPoint);
+    renderMatchResult(matchScoreCount);
+
+    checkWinner();
+}
+
+function points(index, i1, i2) {
+    let point = {};
+    //get the indexOf one of the values input.
+    //if the index is on the beginning, it means that the v1 wins
+    //if it's on the end it's a lose.
+    //tie
+    if (index < 0) {
+        point[i1] = 0;
+        point[i2] = 0;
+    } //wins
+    else if (rules()[index].indexOf(i1) == 0) {
+        point[i1] = 1;
+        point[i2] = 0;
+    } //loses
+    else {
+        point[i1] = 0;
+        point[i2] = 1
+    }
+    return point;
+
+}
+
+function innerHTMLRender(element, value) {
+    element.innerHTML = `${value}`;
+}
+
+function scoreCompute(parse, value) {
+    return parse + value;
+}
+
+function parseToIntValue(selector) {
+    const element = document.querySelector(selector);
+    const value = element ? parseInt(element.textContent) : 0;
+    return [value, element];
+}
+
+function getValue(selector) {
+    const element = document.querySelector(selector);
+    return [element.textContent, element];
+}
+
+function renderMatchResult(matchResult) {
+    //e.g. = matchResult = { player: 0, cpu:1};    
+    const [userValue, userElemt] = parseToIntValue(".user-score");
+    innerHTMLRender(userElemt, scoreCompute(userValue, matchResult.player));
+
+    const [cpuValue, cpuElemt] = parseToIntValue(".cpu-score");
+    innerHTMLRender(cpuElemt, scoreCompute(cpuValue, matchResult.cpu));
+
+    const [roundValue, roundElemt] = parseToIntValue(".round-count");
+    innerHTMLRender(roundElemt, scoreCompute(roundValue, 1));
+
+
+}
+
+function cpuChoiceIndex() {
+    const max = choices().length;
+    return Math.floor(Math.random() * max);
+}
+
+function matchTest() {
+    for (const i of choices()) {
+        for (const j of choices()) {
+            const ix = findRuleIndex(i, j);
+            if (ix < 0) {
+                console.info(`${i} and ${j} it"s a tie (0).`);
+                continue;
+            }
+            console.info(rules()[ix]);
+
+            //get the index of one of the input values.
+            //if the index is on the beginning, it  means that the v1 wins
+            //if its on the end it's a lose.
+            if (rules()[ix].indexOf(i) == 0) {
+                console.info(`${i} wins +1.`);
+                console.info(`${j} lose (0).`);
+            } else {
+                console.info(`${j} wins +1.`);
+                console.info(`${i} lose (0).`);
+            }
+        }
+    }
+}
+
+function findRuleIndex(player1, player2) {
+    //when the v1 and v2 are the same the findIndex will return -1 whitch represent a "tie".
+    //comparing "v1 !== v2" inside of the findIndex to avoid an "if"
+
+    return rules().findIndex(s => player1 !== player2 && s.includes(player1) && s.includes(player2));
+}
+
+
 // Leaderboard modal
 const leadModal = document.getElementById("leaderboard-modal");
 const leadBtn = document.getElementById("btn-leaderboard");
@@ -66,5 +203,3 @@ window.onclick = function (event) {
     }
 }
 
-//Preloader
-window.onload = () => document.querySelector(".preloader").style.display = "none";
