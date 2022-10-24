@@ -352,10 +352,27 @@ async function renderLearderboard(data) {
     finally{
         toggleLoad();
     }
-    //<table class="lead-table"></table>
 }
 
-// Game Rules modal
+// Pushes to leaderboard
+
+async function addLeaderboard(data) {
+    const resp = await fetch("https://sheldonsgame-5552.restdb.io/rest/leaderboard", {
+        method: "POST",
+        mode: "cors",
+        cache: "no-cache",
+        headers: {
+            "x-apikey": xApiKey,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data) 
+    });
+    
+    const parseData = await resp.json();
+    return (parseData) ? parseData : null;
+}
+
+
 
 const rulesModal = document.getElementById("rules-modal");
 const rulesBtn = document.getElementById("btn-rules");
