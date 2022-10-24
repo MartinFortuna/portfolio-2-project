@@ -237,6 +237,35 @@ async function addUserName(data) {
     return (parseData) ? parseData : null;
 }
 
+// Does not push to database if no username is input or returns alert if no connection to database
+
+async function userRegister(e) {
+    const [userText, userElemtText] = getValue(`.user-name-text`);
+    e.preventDefault();
+    try {
+        toggleLoad();
+        if (userElemtText.value.trim() == "") {
+            return false;
+        }
+        
+        const data = {
+            name: userElemtText.value
+        };
+        const exists = (await checkUserNameExists(data)) != null;
+        if (!exists) {
+            await addUserName(data);
+        }        
+        localStorage.setItem("username", JSON.stringify(data));
+        document.querySelector('.username-modal').style.display = "none";
+    } catch (error) {
+        console.info(error);
+        alert(`failed to register [${userElemtText.value.trim()}]`)
+    } finally {
+        toggleLoad();
+        return false;
+    }
+}
+
 // Leaderboard modal
 const leadModal = document.getElementById("leaderboard-modal");
 const leadBtn = document.getElementById("btn-leaderboard");
