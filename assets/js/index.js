@@ -219,6 +219,24 @@ async function checkUserNameExists(data) {
     return (parseData && parseData.length > 0) ? parseData[0] : null;
 }
 
+// If username does not exist, add username to database
+
+async function addUserName(data) {
+    const resp = await fetch("https://sheldonsgame-5552.restdb.io/rest/nicknames", {
+        method: "POST",
+        mode: "cors",
+        cache: "no-cache",
+        headers: {
+            "x-apikey": xApiKey,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    });
+
+    const parseData = await resp.json();
+    return (parseData) ? parseData : null;
+}
+
 // Leaderboard modal
 const leadModal = document.getElementById("leaderboard-modal");
 const leadBtn = document.getElementById("btn-leaderboard");
