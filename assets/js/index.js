@@ -389,7 +389,23 @@ async function updateLeaderboard(id, data) {
     return (parseData) ? parseData : null;
 }
 
+// Ranks leaderboard
 
+async function rankLeaderboard(data) {
+    const queryParam = {
+        player1: data.player1
+    }
+    const queryData = await checkLeaderboard(queryParam);
+    if (queryData != null) {
+        data.points1 = data.points1 + queryData.points1;
+        data.points2 = data.points2 + queryData.points2;
+        await updateLeaderboard(queryData._id, data);
+    } else {
+        await addLeaderboard(data);
+    }
+}
+
+addEventListener();
 
 const rulesModal = document.getElementById("rules-modal");
 const rulesBtn = document.getElementById("btn-rules");
