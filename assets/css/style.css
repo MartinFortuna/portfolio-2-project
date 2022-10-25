@@ -82,6 +82,15 @@ animation: rotate 2s linear infinite;
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   }
 
+  .user-name {
+    background-color: transparent;
+    font-size: 20px;
+  }
+
+  .user-name:hover {
+    transform: scale(1.4);
+  }
+
 
 /* Grid*/
 
@@ -238,7 +247,7 @@ animation: rotate 2s linear infinite;
   
   /* Game rules button*/
 
-  .btn-game-rules{
+  .btn-game-rules {
     background: #f99130;
     margin-top: 60px;
     color: black;
@@ -266,7 +275,7 @@ animation: rotate 2s linear infinite;
 .modal-content {
   text-align: center;
   background-color: #f8cca0;
-  margin: 20px auto; 
+  margin: 120px auto; 
   padding: 20px;
   border: 1px solid #888;
   width: auto;
