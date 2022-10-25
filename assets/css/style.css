@@ -273,16 +273,6 @@ animation: rotate 2s linear infinite;
   height: auto; 
 }
 
-.modal-content-username {
-  text-align: center;
-  background-color: #f8cca0;
-  margin: 20% auto; 
-  padding: 20px;
-  border: 1px solid #888;
-  width: auto;
-  height: auto; 
-}
-
 .table-container{
   overflow-x:auto;
 }
