@@ -216,6 +216,7 @@ animation: rotate 2s linear infinite;
   }
   
   .btn-leaderboard {
+    color: black;
     margin-top: -40px;
     border-radius: 50%;
     width: 60px;
@@ -240,6 +241,7 @@ animation: rotate 2s linear infinite;
   .btn-game-rules{
     background: #f99130;
     margin-top: 60px;
+    color: black;
   }
 
   .btn-game-rules:hover {
@@ -265,6 +267,16 @@ animation: rotate 2s linear infinite;
   text-align: center;
   background-color: #f8cca0;
   margin: 20px auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: auto;
+  height: auto; 
+}
+
+.modal-content-username {
+  text-align: center;
+  background-color: #f8cca0;
+  margin: 20% auto; 
   padding: 20px;
   border: 1px solid #888;
   width: auto;
