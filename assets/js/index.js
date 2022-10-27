@@ -11,18 +11,20 @@ function addEventListener() {
     document.querySelector(".scissors").addEventListener("click", runMatch);
     document.querySelector(".lizard").addEventListener("click", runMatch);
     document.querySelector(".paper").addEventListener("click", runMatch);
+    
     document.querySelector(".form-user-name").addEventListener("submit", userRegister);
     document.querySelector(".btn-leaderboard").addEventListener("click", renderLearderboard);
+    
 
     window.onload = () => {
         toggleLoad();
         document.querySelector('.username-modal').style.display = "block";
-    }
+    };
 }
 
 function toggleLoad() {
     if (document.querySelector(".preloader").style.display == "none") {
-        document.querySelector(".preloader").style.display = "block"
+        document.querySelector(".preloader").style.display = "block";
     } else {
         document.querySelector(".preloader").style.display = "none";
     }
@@ -69,7 +71,6 @@ function runMatch(e) {
     console.info(`${userChoiceValue} vs ${cpuChoiceValue}`);
     console.info(matchPoint);
     renderMatchResult(matchScoreCount);
-
     checkWinner();
 }
 
@@ -89,7 +90,7 @@ function points(index, i1, i2) {
     } //loses
     else {
         point[i1] = 0;
-        point[i2] = 1
+        point[i2] = 1;
     }
     return point;
 
@@ -125,7 +126,48 @@ function renderMatchResult(matchResult) {
     const [roundValue, roundElemt] = parseToIntValue(".round-count");
     innerHTMLRender(roundElemt, scoreCompute(roundValue, 1));
 
+    // Round result modal
+    
+        const resultModal = document.getElementById("round-result-modal");
+        const roundWinner = document.getElementById("winner");
+        const resultBtnSpock = document.getElementById("spock");
+        const resultBtnSissors = document.getElementById("scissors");
+        const resultBtnRock = document.getElementById("rock");
+        const resultBtnLizard = document.getElementById("lizard");
+        const resultBtnPaper = document.getElementById("paper");
+        const nextRound = document.getElementById("next-round");
 
+            resultBtnSpock.onclick = function () {
+                resultModal.style.display = "block";
+            };
+                resultBtnSissors.onclick = function () {
+                resultModal.style.display = "block";
+            };
+        
+            resultBtnRock.onclick = function () {
+                resultModal.style.display = "block";
+            }
+        ;
+            resultBtnLizard.onclick = function () {
+                resultModal.style.display = "block";
+            };
+        
+            resultBtnPaper.onclick = function () {
+                resultModal.style.display = "block";
+            };
+        
+            nextRound.onclick = function () {
+                resultModal.style.display = "none";
+            };
+
+            if (matchResult.player === 1 ){
+                    roundWinner.innerText = `You!`;
+            }else if (matchResult.cpu === 1 ) {
+                    roundWinner.innerText = `Sheldon!`;
+            } else {
+                    roundWinner.innerText = `Draw!`;  
+            }
+    
 }
 
 function cpuChoiceIndex() {
@@ -166,7 +208,7 @@ function findRuleIndex(player1, player2) {
 
 // Check Winner 
 
-function checkWinner() {
+function checkWinner(event) {
     const [userValue, userElemt] = parseToIntValue(".user-score");
     const [cpuValue, cpuElemt] = parseToIntValue(".cpu-score");
 
@@ -177,12 +219,29 @@ function checkWinner() {
         points1: userValue === maxPointsInGame ? 1 : 0,
         player2: "CPU",
         points2: cpuValue === maxPointsInGame ? 1 : 0
-    }
+    };
+    
+    //show the winner popup
 
-    if (userValue === maxPointsInGame || cpuValue === maxPointsInGame) {
-        //show the winner popup
+    if (userValue === maxPointsInGame) {
+        document.getElementById("player-winner-modal").style.display = "block";
+        const playAgain = document.getElementById("play-again-btn");
+        playAgain.onclick = function () {
+            document.getElementById("player-winner-modal").style.display = "none";
+            document.getElementById("round-result-modal").style.display = "none";
+        };
+        
         //computeLeaderboard
-        rankLeaderboard(dataObj)
+        rankLeaderboard(dataObj);
+        gameReset();
+    }else if (cpuValue === maxPointsInGame){
+        document.getElementById("sheldon-winner-modal").style.display = "block";
+        const playAgain= document.getElementById("play-again-btn-btn");
+        playAgain.onclick = function () {
+            document.getElementById("sheldon-winner-modal").style.display = "none";
+            document.getElementById("round-result-modal").style.display = "none";
+        };
+        rankLeaderboard(dataObj);
         gameReset();
     }
 }
@@ -394,7 +453,7 @@ async function updateLeaderboard(id, data) {
 async function rankLeaderboard(data) {
     const queryParam = {
         player1: data.player1
-    }
+    };
     const queryData = await checkLeaderboard(queryParam);
     if (queryData != null) {
         data.points1 = data.points1 + queryData.points1;
@@ -412,19 +471,20 @@ const leadModal = document.getElementById("leaderboard-modal");
 const leadBtn = document.getElementById("btn-leaderboard");
 var span = document.getElementsByClassName("leaderboard-close")[0];
 
+
 leadBtn.onclick = function () {
     leadModal.style.display = "block";
-}
+};
 
 span.onclick = function () {
     leadModal.style.display = "none";
-}
+};
 
 window.onclick = function (event) {
     if (event.target == leadModal) {
         leadModal.style.display = "none";
     }
-}
+};
 
 // Game Rules modal
 const rulesModal = document.getElementById("rules-modal");
@@ -433,15 +493,23 @@ var span = document.getElementsByClassName("rules-close")[0];
 
 rulesBtn.onclick = function () {
     rulesModal.style.display = "block";
-}
+};
 
 span.onclick = function () {
     rulesModal.style.display = "none";
-}
+};
 
 window.onclick = function (event) {
     if (event.target == rulesModal) {
         rulesModal.style.display = "none";
     }
-}
+};
 
+// Change player modal
+const changePlayerModal = document.querySelector('.username-modal');
+const changePlayerBtn = document.getElementById("btn-change-player");
+
+changePlayerBtn.onclick = function () {
+    changePlayerModal.style.display = "block";
+    gameReset();
+};

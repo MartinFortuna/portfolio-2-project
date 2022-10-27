@@ -82,12 +82,14 @@ animation: rotate 2s linear infinite;
     background-color: rgba(0,0,0,0.4); 
   }
 
-  .user-name {
+  /* Modal buttons*/
+
+  .user-name, .next-round, .play-again-btn, .play-again-btn-btn{
     background-color: transparent;
     font-size: 20px;
   }
 
-  .user-name:hover {
+  .user-name:hover, .next-round:hover, .play-again-btn:hover, .play-again-btn-btn:hover {
     transform: scale(1.4);
   }
 
@@ -247,14 +249,15 @@ animation: rotate 2s linear infinite;
   
   /* Game rules button*/
 
-  .btn-game-rules {
+  .btn-game-rules, .btn-change-player {
     background: #f99130;
     margin-top: 60px;
     color: black;
+    margin-left: -15px;
   }
 
-  .btn-game-rules:hover {
-    transform: scale(1.1);
+  .btn-game-rules:hover, .btn-change-player:hover {
+    transform: scale(1.2);
   }
 
   /* Username, rules & leaderboard modals*/
@@ -275,11 +278,31 @@ animation: rotate 2s linear infinite;
 .modal-content {
   text-align: center;
   background-color: #f8cca0;
-  margin: 120px auto; 
+  margin: 20px auto; 
   padding: 20px;
   border: 1px solid #888;
   width: auto;
   height: auto; 
+}
+
+.username-modal-content, .round-modal-content {
+  text-align: center;
+  background-color: #f8cca0;
+  margin: 200px auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: auto;
+  height: auto; 
+}
+
+.sheldon-modal-content, .player-modal-content{
+  text-align: center;
+  background-color: #f8cca0;
+  margin: 200px auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: auto;
+  height: 150px; 
 }
 
 .table-container{

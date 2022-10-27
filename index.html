@@ -19,7 +19,7 @@
          <!-- Landing page section -->
          <!-- Username Modal -->
             <div class="username-modal">
-               <div class="modal-content">
+               <div class="username-modal-content">
                         <h2>Sheldon challenges you!</h2>
                         <br>
                         <form action="#" class="form-user-name">
@@ -57,21 +57,47 @@
          <div class="playground-grid-child-container">
             <div class="image-container">
                <img class="main-image" src="./assets/images/atom.png" alt="Big Bang Theory atom image">
-               <button type="button" class="spock">
+               <button type="button" class="spock" id="spock">
                <img class="user-option-img" src="assets/images/hand_spock_icon.png" alt="spock hand gesture image">
                </button>
-               <button type="button" class="scissors">
+               <button type="button" class="scissors" id="scissors">
                <img class="user-option-img" src="assets/images/hand_scissors_icon.png" alt="scissors hand gesture image">
                </button>
-               <button type="button" class="rock">
+               <button type="button" class="rock" id="rock">
                <img class="user-option-img" src="assets/images/hand_rock_icon.png" alt="rock hand gesture image">
                </button>
-               <button type="button" class="lizard">
+               <button type="button" class="lizard" id="lizard">
                <img class="user-option-img" src="assets/images/hand_lizard_icon.png" alt="lizard hand gesture image">
                </button>
-               <button type="button" class="paper">
+               <button type="button" class="paper" id="paper">
                <img class="user-option-img" src="assets/images/hand_paper_icon.png" alt="paper hand gesture image">
                </button>
+            </div>
+            <!-- Round result Modal -->
+            <div id="round-result-modal" class="modal-background">
+               
+               <div class="round-modal-content">
+                  <div>
+                  <h2>Round Winner: <span id="winner"></span></h2><br><br>
+                  <button id="next-round" type="button" class="next-round">Next round</button>
+                  </div>
+               </div>
+            </div>
+            <!-- Player winner Modal -->
+            <div id="player-winner-modal" class="modal-background">
+               <!-- Modal content -->
+               <div class="player-modal-content">
+                  <h2>You win!</h2><br><br>
+                  <button id="play-again-btn" type="button" class="play-again-btn" >Play again</button>
+               </div>
+            </div>
+            <!-- Sheldon winner Modal -->
+            <div id="sheldon-winner-modal" class="modal-background">
+               <!-- Modal content -->
+               <div class="sheldon-modal-content">
+                  <h2>Sheldon wins!</h2><br><br>
+                  <button id="play-again-btn-btn" type="button" class="play-again-btn-btn">Play again</button>
+               </div>
             </div>
          </div>
          <div class="leaderboard-grid-child-container">
@@ -106,13 +132,16 @@
                   </div>
                </div>
             </div>
+            <button id="btn-change-player" type="button" class="btn-change-player">Change player</button>
             <button id="btn-rules" type="button" class="btn-game-rules">Game Rules</button>
             <!-- Rules Modal -->
             <div id="rules-modal" class="modal-background">
                <!-- Modal content -->
                <div class="modal-content">
                   <span class="rules-close">&times;</span>
-                  <h2>Game Rules</h2>
+                  <h2>Game Rules</h2><br>
+                  <h3>First to win 10 rounds wins the game!</h3>
+                  <h3>If round is a tie, no points will be added.</h3><br>
                   <div>
                      <p>Scissors cuts Paper,</p>
                      <p>Paper covers Rock,</p>
