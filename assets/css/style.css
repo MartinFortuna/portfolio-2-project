@@ -85,6 +85,7 @@ animation: rotate 2s linear infinite;
   /* Modal buttons*/
 
   .user-name, .next-round, .play-again-btn, .play-again-btn-btn{
+    color: black;
     background-color: transparent;
     font-size: 20px;
   }
@@ -256,6 +257,8 @@ animation: rotate 2s linear infinite;
     margin-left: -15px;
   }
 
+  .user-name
+
   .btn-game-rules:hover, .btn-change-player:hover {
     transform: scale(1.2);
   }
@@ -316,7 +319,7 @@ animation: rotate 2s linear infinite;
 }
 
 .rules-close, .leaderboard-close  {
-  color: #aaa;
+  color: black;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -369,6 +372,7 @@ tr:nth-child(even) {
     /* Preloader*/
 
   .preloader-icon {
+   top: 45%;
    height: 100px;
    width: 100px;
   }
