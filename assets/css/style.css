@@ -83,6 +83,7 @@ animation: rotate 0.7s linear infinite;
   /* Modal buttons*/
 
   .user-name, .next-round, .play-again-btn, .play-again-btn-btn{
+    height: 30px;
     color: black;
     background-color: transparent;
     font-size: 20px;
