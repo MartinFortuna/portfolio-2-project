@@ -5,12 +5,29 @@ const maxPointsInGame = 10;
 // Add Event listeners
 
 function addEventListener() {
-    document.querySelector(".spock").addEventListener("click", runMatch);
-    document.querySelector(".rock").addEventListener("click", runMatch);
-    document.querySelector(".scissors").addEventListener("click", runMatch);
-    document.querySelector(".lizard").addEventListener("click", runMatch);
-    document.querySelector(".paper").addEventListener("click", runMatch);
 
+    const onClickWrap = (e) => {
+        switch (e.currentTarget.className) {
+            case "next-round":
+                toggleRoundModal(false);
+                break;        
+            case "spock":
+            case "rock":
+            case "scissors":
+            case "lizard":
+            case "paper":           
+                runMatch(e);
+                toggleRoundModal(true);
+                break;       
+        }
+    };
+
+    document.querySelector(".spock").addEventListener("click", onClickWrap);
+    document.querySelector(".rock").addEventListener("click", onClickWrap);
+    document.querySelector(".scissors").addEventListener("click", onClickWrap);
+    document.querySelector(".lizard").addEventListener("click", onClickWrap);
+    document.querySelector(".paper").addEventListener("click", onClickWrap);
+    document.getElementById("next-round").addEventListener("click", onClickWrap);
     document.querySelector(".form-user-name").addEventListener("submit", userRegister);
     document.querySelector(".btn-leaderboard").addEventListener("click", renderLearderboard);
 
@@ -64,7 +81,9 @@ function runMatch(e) {
     const matchPoint = points(matchEvolIndex, userChoiceValue, cpuChoiceValue);
     const matchScoreCount = {
         player: matchPoint[userChoiceValue],
-        cpu: matchPoint[cpuChoiceValue]
+        cpu: matchPoint[cpuChoiceValue],
+        roundRule: matchEvolIndex > 0 ? rules()[matchEvolIndex] : ``,
+        roundVersus: `${userChoiceValue} vs ${cpuChoiceValue}`
     };
 
     console.info(`${userChoiceValue} vs ${cpuChoiceValue}`);
@@ -114,6 +133,16 @@ function getValue(selector) {
     return [element.textContent, element];
 }
 
+// Round result modal  
+
+function toggleRoundModal(open){    
+    const resultModal = document.getElementById("round-result-modal");
+    if(open) 
+        resultModal.style.display = "block";
+    else
+        resultModal.style.display = "none";
+}
+
 function renderMatchResult(matchResult) {
     //e.g. = matchResult = { player: 0, cpu:1};    
     const [userValue, userElemt] = parseToIntValue(".user-score");
@@ -124,46 +153,21 @@ function renderMatchResult(matchResult) {
 
     const [roundValue, roundElemt] = parseToIntValue(".round-count");
     innerHTMLRender(roundElemt, scoreCompute(roundValue, 1));
-
-    // Round result modal
-
-    const resultModal = document.getElementById("round-result-modal");
+   
+    //Round winner modal
     const roundWinner = document.getElementById("winner");
-    const resultBtnSpock = document.getElementById("spock");
-    const resultBtnSissors = document.getElementById("scissors");
-    const resultBtnRock = document.getElementById("rock");
-    const resultBtnLizard = document.getElementById("lizard");
-    const resultBtnPaper = document.getElementById("paper");
-    const nextRound = document.getElementById("next-round");
+    const roundInputs = document.getElementById("round-inputs");
 
-    resultBtnSpock.onclick = function() {
-        resultModal.style.display = "block";
-    };
-    resultBtnSissors.onclick = function() {
-        resultModal.style.display = "block";
-    };
-
-    resultBtnRock.onclick = function() {
-        resultModal.style.display = "block";
-    };
-    resultBtnLizard.onclick = function() {
-        resultModal.style.display = "block";
-    };
-
-    resultBtnPaper.onclick = function() {
-        resultModal.style.display = "block";
-    };
-
-    nextRound.onclick = function() {
-        resultModal.style.display = "none";
-    };
-
+    const roundRuleMessage = `<h2>${matchResult.roundVersus}</h2></br><h2>${matchResult.roundRule}</h2><br>`;
     if (matchResult.player === 1) {
-        roundWinner.innerText = `You!`;
+        roundWinner.innerText = `You!`;        
+        roundInputs.innerHTML = roundRuleMessage;
     } else if (matchResult.cpu === 1) {
         roundWinner.innerText = `Sheldon!`;
+        roundInputs.innerHTML = roundRuleMessage;
     } else {
         roundWinner.innerText = `Draw!`;
+        roundInputs.innerHTML = roundRuleMessage;
     }
 
 }
@@ -171,30 +175,6 @@ function renderMatchResult(matchResult) {
 function cpuChoiceIndex() {
     const max = choices().length;
     return Math.floor(Math.random() * max);
-}
-
-function matchTest() {
-    for (const i of choices()) {
-        for (const j of choices()) {
-            const ix = findRuleIndex(i, j);
-            if (ix < 0) {
-                console.info(`${i} and ${j} it"s a tie (0).`);
-                continue;
-            }
-            console.info(rules()[ix]);
-
-            //get the index of one of the input values.
-            //if the index is on the beginning, it  means that the v1 wins
-            //if its on the end it's a lose.
-            if (rules()[ix].indexOf(i) == 0) {
-                console.info(`${i} wins +1.`);
-                console.info(`${j} lose (0).`);
-            } else {
-                console.info(`${j} wins +1.`);
-                console.info(`${i} lose (0).`);
-            }
-        }
-    }
 }
 
 function findRuleIndex(player1, player2) {
@@ -219,7 +199,7 @@ function checkWinner(event) {
         points2: cpuValue === maxPointsInGame ? 1 : 0
     };
 
-    //show the winner popup
+//show the winner popup
 
     if (userValue === maxPointsInGame) {
         document.getElementById("player-winner-modal").style.display = "block";
