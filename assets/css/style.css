@@ -372,6 +372,7 @@ tr:nth-child(even) {
     /* Preloader*/
 
   .preloader-icon {
+   position: relative;
    top: 45%;
    height: 100px;
    width: 100px;
