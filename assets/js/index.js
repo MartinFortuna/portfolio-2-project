@@ -1,5 +1,4 @@
 // Global Variables
-
 const xApiKey = "63544228626b9c747864ae40";
 const maxPointsInGame = 10;
 
@@ -11,10 +10,10 @@ function addEventListener() {
     document.querySelector(".scissors").addEventListener("click", runMatch);
     document.querySelector(".lizard").addEventListener("click", runMatch);
     document.querySelector(".paper").addEventListener("click", runMatch);
-    
+
     document.querySelector(".form-user-name").addEventListener("submit", userRegister);
     document.querySelector(".btn-leaderboard").addEventListener("click", renderLearderboard);
-    
+
 
     window.onload = () => {
         toggleLoad();
@@ -127,47 +126,46 @@ function renderMatchResult(matchResult) {
     innerHTMLRender(roundElemt, scoreCompute(roundValue, 1));
 
     // Round result modal
-    
-        const resultModal = document.getElementById("round-result-modal");
-        const roundWinner = document.getElementById("winner");
-        const resultBtnSpock = document.getElementById("spock");
-        const resultBtnSissors = document.getElementById("scissors");
-        const resultBtnRock = document.getElementById("rock");
-        const resultBtnLizard = document.getElementById("lizard");
-        const resultBtnPaper = document.getElementById("paper");
-        const nextRound = document.getElementById("next-round");
 
-            resultBtnSpock.onclick = function () {
-                resultModal.style.display = "block";
-            };
-                resultBtnSissors.onclick = function () {
-                resultModal.style.display = "block";
-            };
-        
-            resultBtnRock.onclick = function () {
-                resultModal.style.display = "block";
-            }
-        ;
-            resultBtnLizard.onclick = function () {
-                resultModal.style.display = "block";
-            };
-        
-            resultBtnPaper.onclick = function () {
-                resultModal.style.display = "block";
-            };
-        
-            nextRound.onclick = function () {
-                resultModal.style.display = "none";
-            };
+    const resultModal = document.getElementById("round-result-modal");
+    const roundWinner = document.getElementById("winner");
+    const resultBtnSpock = document.getElementById("spock");
+    const resultBtnSissors = document.getElementById("scissors");
+    const resultBtnRock = document.getElementById("rock");
+    const resultBtnLizard = document.getElementById("lizard");
+    const resultBtnPaper = document.getElementById("paper");
+    const nextRound = document.getElementById("next-round");
 
-            if (matchResult.player === 1 ){
-                    roundWinner.innerText = `You!`;
-            }else if (matchResult.cpu === 1 ) {
-                    roundWinner.innerText = `Sheldon!`;
-            } else {
-                    roundWinner.innerText = `Draw!`;  
-            }
-    
+    resultBtnSpock.onclick = function() {
+        resultModal.style.display = "block";
+    };
+    resultBtnSissors.onclick = function() {
+        resultModal.style.display = "block";
+    };
+
+    resultBtnRock.onclick = function() {
+        resultModal.style.display = "block";
+    };
+    resultBtnLizard.onclick = function() {
+        resultModal.style.display = "block";
+    };
+
+    resultBtnPaper.onclick = function() {
+        resultModal.style.display = "block";
+    };
+
+    nextRound.onclick = function() {
+        resultModal.style.display = "none";
+    };
+
+    if (matchResult.player === 1) {
+        roundWinner.innerText = `You!`;
+    } else if (matchResult.cpu === 1) {
+        roundWinner.innerText = `Sheldon!`;
+    } else {
+        roundWinner.innerText = `Draw!`;
+    }
+
 }
 
 function cpuChoiceIndex() {
@@ -220,24 +218,24 @@ function checkWinner(event) {
         player2: "CPU",
         points2: cpuValue === maxPointsInGame ? 1 : 0
     };
-    
+
     //show the winner popup
 
     if (userValue === maxPointsInGame) {
         document.getElementById("player-winner-modal").style.display = "block";
         const playAgain = document.getElementById("play-again-btn");
-        playAgain.onclick = function () {
+        playAgain.onclick = function() {
             document.getElementById("player-winner-modal").style.display = "none";
             document.getElementById("round-result-modal").style.display = "none";
         };
-        
+
         //computeLeaderboard
         rankLeaderboard(dataObj);
         gameReset();
-    }else if (cpuValue === maxPointsInGame){
+    } else if (cpuValue === maxPointsInGame) {
         document.getElementById("sheldon-winner-modal").style.display = "block";
-        const playAgain= document.getElementById("play-again-btn-btn");
-        playAgain.onclick = function () {
+        const playAgain = document.getElementById("play-again-btn-btn");
+        playAgain.onclick = function() {
             document.getElementById("sheldon-winner-modal").style.display = "none";
             document.getElementById("round-result-modal").style.display = "none";
         };
@@ -306,14 +304,14 @@ async function userRegister(e) {
         if (userElemtText.value.trim() == "") {
             return false;
         }
-        
+
         const data = {
             name: userElemtText.value
         };
         const exists = (await checkUserNameExists(data)) != null;
         if (!exists) {
             await addUserName(data);
-        }        
+        }
         localStorage.setItem("username", JSON.stringify(data));
         document.querySelector('.username-modal').style.display = "none";
     } catch (error) {
@@ -337,7 +335,7 @@ async function checkLeaderboard(data) {
             "Content-Type": "application/json"
         }
     });
-    
+
     const parseData = await resp.json();
     return (parseData && parseData.length > 0) ? parseData[0] : null;
 }
@@ -345,7 +343,7 @@ async function checkLeaderboard(data) {
 // Lists leaderboard data
 
 async function listLearderboard(data) {
-    
+
     const resp = await fetch(`https://sheldonsgame-5552.restdb.io/rest/leaderboard?max=10&q={}&h={"$orderby":{"points1":-1,"points2":1}}`, {
         method: "GET",
         mode: "cors",
@@ -363,7 +361,7 @@ async function listLearderboard(data) {
 
 async function renderLearderboard(data) {
     const [table, tableElemt] = getValue(`.lead-table`);
-    try {        
+    try {
         toggleLoad();
         const leadboardData = await listLearderboard(data);
         if (leadboardData == null) {
@@ -393,7 +391,7 @@ async function renderLearderboard(data) {
 
         let rank = 1;
         let tableRows = "";
-        for (const row of leadboardData) {            
+        for (const row of leadboardData) {
             const render = tableTRowData
                 .replace("rank", `${rank}`)
                 .replace("player1", `${row.player1}`)
@@ -407,8 +405,7 @@ async function renderLearderboard(data) {
     } catch (error) {
         innerHTMLRender(tableElemt, "<tr><td>nothing to show :(</td></tr>");
         console.info(error);
-    }
-    finally{
+    } finally {
         toggleLoad();
     }
 }
@@ -424,9 +421,9 @@ async function addLeaderboard(data) {
             "x-apikey": xApiKey,
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(data) 
+        body: JSON.stringify(data)
     });
-    
+
     const parseData = await resp.json();
     return (parseData) ? parseData : null;
 }
@@ -472,15 +469,15 @@ const leadBtn = document.getElementById("btn-leaderboard");
 var span = document.getElementsByClassName("leaderboard-close")[0];
 
 
-leadBtn.onclick = function () {
+leadBtn.onclick = function() {
     leadModal.style.display = "block";
 };
 
-span.onclick = function () {
+span.onclick = function() {
     leadModal.style.display = "none";
 };
 
-window.onclick = function (event) {
+window.onclick = function(event) {
     if (event.target == leadModal) {
         leadModal.style.display = "none";
     }
@@ -491,15 +488,15 @@ const rulesModal = document.getElementById("rules-modal");
 const rulesBtn = document.getElementById("btn-rules");
 var span = document.getElementsByClassName("rules-close")[0];
 
-rulesBtn.onclick = function () {
+rulesBtn.onclick = function() {
     rulesModal.style.display = "block";
 };
 
-span.onclick = function () {
+span.onclick = function() {
     rulesModal.style.display = "none";
 };
 
-window.onclick = function (event) {
+window.onclick = function(event) {
     if (event.target == rulesModal) {
         rulesModal.style.display = "none";
     }
@@ -509,7 +506,7 @@ window.onclick = function (event) {
 const changePlayerModal = document.querySelector('.username-modal');
 const changePlayerBtn = document.getElementById("btn-change-player");
 
-changePlayerBtn.onclick = function () {
+changePlayerBtn.onclick = function() {
     changePlayerModal.style.display = "block";
     gameReset();
 };
