@@ -27,6 +27,7 @@ h1,h2,h3 {
 
 /* Preloader*/
 
+
 .preloader
 {
 position: fixed;
@@ -44,7 +45,7 @@ position: relative;
 top: 45%;
 height: 200px;
 width: 200px;
-animation: rotate 2s linear infinite;
+animation: rotate 0.7s linear infinite;
 }	@keyframes rotate {
   from {
     transform: rotate(0deg);
@@ -55,15 +56,6 @@ animation: rotate 2s linear infinite;
   }
 }
 
-.preloader-text {
-    font-size: 30px;
-    position: relative;
-    top: 47%;
-    margin-left: 45%;
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-}
 
 /* Landing page*/
 
@@ -84,9 +76,9 @@ animation: rotate 2s linear infinite;
   
   input {
     font-size: 15px;
-    width: 10%;
+    width: 120px;
     height: 20px;
-    text-align: center;
+    text-align: center
   }
   /* Modal buttons*/
 
@@ -378,17 +370,8 @@ tr:nth-child(even) {
     /* Preloader*/
 
   .preloader-icon {
-   position: relative;
-   top: 45%;
    height: 100px;
    width: 100px;
-  }
-
-  .preloader-text {
-    font-size: 20px;
-    height: 50px;
-    width: 50px;
-    margin-left: 40%;
   }
 
     .grid-parent-container {
