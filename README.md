@@ -1,8 +1,8 @@
 # Sheldon's game
 
 Sheldon's game is a website aimed at anyone who wants to play a fun variation of rock, paper, and scissors.
-The game is based on the Big Bang theory show where this variation was first mentioned. The website's name was taken from one of the show's characters, Sheldon.
-The first to win 10 rounds, wins the game, and a Leaderboard shows the top 10 winners around the globe.
+The game is inspired on the Big Bang theory show where this variation was first mentioned. The website's name was taken from one of the show's characters, Sheldon.
+The first to win 10 rounds, wins the game, and a live Leaderboard shows the top 10 winners around the globe.
 The opponent is Sheldon(computer) and the computer's choices are completely random which makes the game quite hard!
 
 Developed by Martin Fortuna.
@@ -36,8 +36,8 @@ Developed by Martin Fortuna.
 
 ## Project Goals
 
-I wanted to create a fun game based on Sheldon's version of rock, paper, and scissors televised via the Big Bang Theory show, this version adds difficulty as 2 more options, lizard and spock are added to the options. The game aims to have the user play repeatedly to rank in the top 10 winners worldwide, the users can compete with friends to get the highest score.
-To achieve a live leaderboard and username register, I used a Rest API key to link the data to my Restdb.io database.
+I wanted to create a fun game based on Sheldon's version of rock, paper, and scissors televised via the Big Bang Theory show, this version adds difficulty with 2 extra choices, lizard and spock. The game aims to have the user play repeatedly to rank in the top 10 winners worldwide, the users can compete with friends to get the highest score.
+To achieve a live leaderboard and username register in the database, I used a Rest API key to link the data to my Restdb.io database.
 
 ## Target Audience
 
