@@ -7,18 +7,19 @@ const maxPointsInGame = 10;
 function addEventListener() {
 
     const onClickWrap = (e) => {
+
         switch (e.currentTarget.className) {
             case "next-round":
                 toggleRoundModal(false);
-                break;        
+                break;
             case "spock":
             case "rock":
             case "scissors":
             case "lizard":
-            case "paper":           
+            case "paper":
                 runMatch(e);
                 toggleRoundModal(true);
-                break;       
+                break;
         }
     };
 
@@ -30,7 +31,6 @@ function addEventListener() {
     document.getElementById("next-round").addEventListener("click", onClickWrap);
     document.querySelector(".form-user-name").addEventListener("submit", userRegister);
     document.querySelector(".btn-leaderboard").addEventListener("click", renderLearderboard);
-
 
     window.onload = () => {
         toggleLoad();
@@ -135,9 +135,9 @@ function getValue(selector) {
 
 // Round result modal  
 
-function toggleRoundModal(open){    
+function toggleRoundModal(open) {
     const resultModal = document.getElementById("round-result-modal");
-    if(open) 
+    if (open)
         resultModal.style.display = "block";
     else
         resultModal.style.display = "none";
@@ -153,14 +153,14 @@ function renderMatchResult(matchResult) {
 
     const [roundValue, roundElemt] = parseToIntValue(".round-count");
     innerHTMLRender(roundElemt, scoreCompute(roundValue, 1));
-   
+
     //Round winner modal
     const roundWinner = document.getElementById("winner");
     const roundInputs = document.getElementById("round-inputs");
 
     const roundRuleMessage = `<h2>${matchResult.roundVersus}</h2></br><h2>${matchResult.roundRule}</h2><br>`;
     if (matchResult.player === 1) {
-        roundWinner.innerText = `You!`;        
+        roundWinner.innerText = `You!`;
         roundInputs.innerHTML = roundRuleMessage;
     } else if (matchResult.cpu === 1) {
         roundWinner.innerText = `Sheldon!`;
@@ -199,7 +199,7 @@ function checkWinner(event) {
         points2: cpuValue === maxPointsInGame ? 1 : 0
     };
 
-//show the winner popup
+    //show the winner popup
 
     if (userValue === maxPointsInGame) {
         document.getElementById("player-winner-modal").style.display = "block";

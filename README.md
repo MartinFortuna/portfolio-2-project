@@ -1,108 +1,323 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Sheldon's game
 
-Welcome MartinFortuna,
+Sheldon's game is a website aimed at anyone who wants to play a fun variation of rock, paper, and scissors.
+The game is based on the Big Bang theory show where this variation was first mentioned. The website's name was taken from one of the show's characters, Sheldon.
+The first to win 10 rounds, wins the game, and a Leaderboard shows the top 10 winners around the globe.
+The opponent is Sheldon(computer) and the computer's choices are completely random which makes the game quite hard!
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Developed by Martin Fortuna.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+![Am I Responsive Website Mockup](/readme/wireframes/amIresponsive.png)
 
-## Gitpod Reminders
+[Sheldon's game - Live Webpage](https://martinfortuna.github.io/portfolio-2-project/) (Right-click to open in a new tab)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Contents
 
-`python3 -m http.server`
+1. [Project Goals](#project-goals)
+1. [Target Audience](#target-audience)
+1. [User Experience (UX)](#user-experience-ux)
+   - [User stories](#user-stories)
+   - [Design](#design)
+   - [Wireframes](#wireframes)
+1. [Features](#features)
+1. [Technologies Used](#technologies-used)
+   - [Languages Used](#languages-used)
+   - [Frameworks and Tools Used](#frameworks-and-tools-used)
+1. [Testing](#testing)
+   - [Validators](Validators)
+   - [Accessibility and Performance](#accessibility-and-performance)
+   - [Further Testing](#further-testing)
+   - [Testing User Stories from the User Experience (UX) Section](#testing-user-stories-from-the-user-experience-ux-section)
+   - [Bugs and Fixes](#bugs-and-fixes)
+1. [Future Updates](#future-updates)
+1. [Deployment](#deployment)
+1. [Credits](#credits)
+1. [Acknowledgements](#acknowledgements)
 
-A blue button should appear to click: _Make Public_,
+## Project Goals
 
-Another blue button should appear to click: _Open Browser_.
+I wanted to create a fun game based on Sheldon's version of rock, paper, and scissors televised via the Big Bang Theory show, this version adds difficulty as 2 more options, lizard and spock are added to the options. The game aims to have the user play repeatedly to rank in the top 10 winners worldwide, the users can compete with friends to get the highest score.
+To achieve a live leaderboard and username register, I used a Rest API key to link the data to my Restdb.io database.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## Target Audience
 
-A blue button should appear to click: _Make Public_,
+The target audience for this site is anyone who enjoys chance games, and competition with friends and family.
 
-Another blue button should appear to click: _Open Browser_.
+## User Experience (UX)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- ### User stories
 
-To log into the Heroku toolbelt CLI:
+  - #### First Time Visitor Goals
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+    - As a First Time Visitor, I want to quickly understand the main purpose of the site.
+    - As a First Time Visitor, I want to be able to view the site on multiple devices.
+    - As a First Time Visitor, I want to enter my nickname.
+    - As a First Time Visitor, I want to understand the rules of the game.
+    - As a First Time Visitor, I want to quickly understand the scoring system.
+    - As a First Time Visitor, I would like to see descriptive images of the choices I will make.
+    - As a First Time Visitor, I would like to see the rules at any time while playing the game.
+    - As a First Time Visitor, I would like to see the scoreboard at any time while playing the game.
+    - As a First Time Visitor, I would like to see a pop-up that shows the round winner for each round played.
+    - As a First Time Visitor, I would like to see a pop-up that shows the game-winner.
+    - As a First Time Visitor, I would like to see an option to play a new game after the game is over.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+  - #### Returning Visitor Goals
 
-------
+    - As a Returning Visitor, I want to play side-by-side with friends and family.
+    - As a Returning Visitor, I want to have the option to change the player.
 
-## Release History
+  - #### Frequent User Goals
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+    - As a Returning Visitor, I want to see my rank in the top ten leaderboard and how many games I won versus Sheldon.
+    - As a Frequent User, I want to check to see if there are any new sections added to the site.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+- ### Design
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+  - #### Imagery
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+    - I have used The Big Bang Theory logo as the background and preloader image, the colors are also inspired by the show.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+  - #### Colour Scheme
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+    - The two main colors used are orange and black.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+  - #### Typography
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+    - The Oswald font is the main font used throughout the whole website with Sans Serif as the fallback font in a case where for any reason the font isn't being imported into the site correctly. Oswald is a clean font used frequently in programming, so it is both attractive and appropriate.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+* ### Wireframes
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+This is the prototype of the project that may change during its development.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+<details><summary>Desktop</summary>
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+![Tablet Desktop Part 1](/readme/wireframes/usernname-landing-page-desktop.png)
+![Tablet Desktop Part 2](/readme/wireframes/landing-page-desktop.png)
+![Tablet Desktop Part 3](/readme/wireframes/round-winner-modal.png)
+![Tablet Desktop Part 4](/readme/wireframes/scoreboard.png)
+![Tablet Desktop Part 5](/readme/wireframes/rules.png)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+</details>
+<details><summary>Tablet</summary>
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+![Tablet Wireframe Part 1](/readme/wireframes/usernname-landing-page-tablet.png)
+![Tablet Wireframe Part 2](/readme/wireframes/landing-page-tablet.png)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+</details>
+<details><summary>Mobile</summary>
 
-------
+![Mobile Wireframe Part 1](/readme/wireframes/usernname-landing-page-mobile.png)
+![Mobile Wireframe Part 2](/readme/wireframes/landing-page-mobile.png)
 
-## FAQ about the uptime script
+</details>
 
-**Why have you added this script?**
+[Back to top &uarr;](#contents)
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+## Features
 
-**How will this affect me?**
+### Preloader Modal
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+The user will see a preloader spinning as the website loads the game, this same preloader will be used when get and post actions are taken and take some seconds to complete.
+![Preloader](/readme/feature-screenshots/preloader.png)
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+### Username Modal
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+The user is greeted with a welcoming challenge sentence, he has an overview of what the landing page looks like. The user's nickname will later be
+used to compute the user's score in the leaderboard.
+![Username Modal](/readme/feature-screenshots/username-landing-page.png)
 
-**So….?**
+### Landing Page
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+The user can see the website's name, the game name, and descriptive icons that he will use to play the game. He can also see buttons for opening at anytime the leaderboard, game rules, and change player modals. The scoreboard is well placed above the playground, visible, and easy to understand.
 
-**Can I opt out?**
+![Landing Page](/readme/feature-screenshots/landing-page.png)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+### Round result modal
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+The round result modal appears after the user has made the selection, it will outline the round winner, provide the user's and Sheldon's choice, and also the round rule.
+The user will be given the button to move forward to the next round.
+![Round result modal](/readme/feature-screenshots/round-modal.png)
 
-**Anything more?**
+### Game winner modal
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+The game-winner modal appears after either the user or Sheldon has reached 10 rounds won, it will outline the game-winner, and provide the user with a motivational sentence in case of the game lost and a congratulations sentence in case of a win. The user will be given the button to play the game again.
+![Game winner modal](/readme/feature-screenshots/winner-modal.png)
 
----
+### Leaderboard modal
 
-Happy coding!
+The leaderboard modal appears once the user clicks the leaderboard button, it shows the top 10 players' placement around the world, and it also provides the users with how many games Sheldon has won against them. It can be accessed at any time by the user.
+![Leaderboard modal](/readme/feature-screenshots/leaderboard-modal.png)
+
+### Game rules modal
+
+The rules modal appears once the user clicks the rules button, it shows the game rules, the user has the option to close the modal by either clicking on the X sign or anywhere in the window for easy access back to the game.
+![Game rules modal](/readme/feature-screenshots/rules-modal.png)
+
+### Change player modal
+
+If the user is playing with a friend and wishes to pass the turn, he can click on the change player button which will open the username modal.
+![Change player modal](/readme/feature-screenshots/change-player-modal.png)
+
+### Footer
+
+The footer has 2 icons, one that directs the user to the website's social media account and the other to the developer's GitHub profile.
+![Footer](/readme/feature-screenshots/social-media-links.png)
+
+## Technologies Used
+
+### Languages Used
+
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+- [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+
+### Frameworks and Tools Used
+
+1. [Google Fonts:](https://fonts.google.com/)
+1. [Font Awesome:](https://fontawesome.com/)
+1. [Balsamiq:](https://balsamiq.com/)
+1. [Stackoverflow](https://stackoverflow.com/).
+1. [W3schools](https://www.w3schools.com/)
+1. [W3C HTML Validator](https://validator.w3.org/)
+1. [W3C JigSaw Validator](https://jigsaw.w3.org/css-validator/)
+1. [JSHint](https://jshint.com/)
+1. [Grammarly](https://www.grammarly.com/)
+1. [favicon.io](https://favicon.io/)
+
+[Back to top &uarr;](#contents)
+
+## Testing
+
+### Validators
+
+<details><summary>W3C Markup Validator</summary>
+
+- No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmartinfortuna.github.io%2Fportfolio-2-project%2F)
+
+</details>
+<details><summary>W3C CSS Validator</summary>
+
+- No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmartinfortuna.github.io%2Fportfolio-2-project%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+
+</details>
+
+<details><summary>JSHint</summary>
+
+![JSHint Results](/readme/validators/jshint.png)
+
+</details>
+
+### Accessibility and Performance
+
+<details><summary>WAVE Web Accessibility Evaluation Tool</summary>
+
+- No errors were returned when passing through WAVE Web Accessibility Evaluation Tool
+  ![WAVE Web Accessibility Evaluation Tool Results](/readme/validators/wave-accessibility.png)
+
+</details>
+
+For performance and more accessibility testing, I used Google Lighthouse throughout:
+
+#### Lighthouse Results
+
+<details><summary>Desktop</summary>
+
+Landing page
+
+![Lighthouse Desktop Score](/readme/validators/desktop-lighthouse.png)
+
+</details>
+
+<details><summary>Mobile</summary>
+
+Landing page
+
+![Lighthouse Mobile Score](/readme/validators/mobile-lighthouse.png)
+
+</details>
+
+### Further Testing
+
+<details><summary>Manual Testing</summary>
+
+| Location     | Feature Tested      | Expected Result                                                               | Actual Result | Pass/Fail |
+| ------------ | ------------------- | ----------------------------------------------------------------------------- | ------------- | --------- |
+| Preloader    | Preloader           | Is centered in relation to VH and VW.                                         | As Expected   | Pass      |
+|              | Preloader           | Appears while push and get data requests are made to the database.            | As Expected   | Pass      |
+| Landing page | Username modal      | Appears as soon as window loads                                               | As Expected   | Pass      |
+|              | Username modal      | Does not let the user start when trying to validate empty data                | As Expected   | Pass      |
+|              | Username modal      | Does not let the user close the modal without inputting the username.         | As Expected   | Pass      |
+|              | User choice buttons | Buttons scale when hovered                                                    | As Expected   | Pass      |
+|              | Round modal         | Appears as soon as the user makes the choice                                  | As Expected   | Pass      |
+|              | Round modal         | Closes once the user clicks on next round                                     | As Expected   | Pass      |
+|              | Scoreboard          | computes match results and resets once the game is over.                      | As Expected   | Pass      |
+|              | Game winner modal   | Appears as soon as the user either the user or the CPU reaches 10 rounds won. | As Expected   | Pass      |
+|              | Leaderboard modal   | Appears as soon as the user makes the choice                                  | As Expected   | Pass      |
+|              |                     | Correctly shows the top 10 winners and displays games won by CPU              | As Expected   | Pass      |
+|              | Change player modal | Appears as soon as the user makes the choice                                  | As Expected   | Pass      |
+|              | Game rules modal    | Appears as soon as the user makes the choice                                  | As Expected   | Pass      |
+|              | Game rules modal    | Closes outside of modal click                                                 | As Expected   | Pass      |
+|              | Scoreboard          | computes match result and resets once game is over.                           | As Expected   | Pass      |
+|              | Social Media Icons  | Clicking the individual Social Media Icons opens their site in a blank tab    | As Expected   | Pass      |
+
+</details>
+
+<details><summary>Browser Testing</summary>
+
+| **Browser Tested** | **Actual Result** | **Pass/Fail** |
+| ------------------ | ----------------- | ------------- |
+| Chrome             | As Expected       | Pass          |
+| Firefox            | As Expected       | Pass          |
+| Edge               | As Expected       | Pass          |
+| Mac OS Safari      | As Expected       | Pass          |
+
+</details>
+
+<details><summary>Browserstack.com</summary>
+
+![Browserstack Image](/readme/validators/devicerange.png)
+
+</details>
+
+## Unfixed Bugs
+
+- No known bugs left unfixed.
+
+## Future Updates
+
+I would like to add the following updates in the future:
+
+1. Online player vs player.
+2. Add CPU level of difficulty.
+
+## Deployment
+
+### GitHub Pages
+
+- The site was deployed to GitHub pages. The steps to deploy are as follows:
+- In the GitHub repository, navigate to the Settings tab
+- From the source section drop-down menu, select the Master Branch
+- Once the master branch has been selected, click on save and the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+
+The live link can be found here - https://martinfortuna.github.io/portfolio-2-project/
+
+## Credits
+
+### Content
+
+- Credit to King Subash [King Subash](https://www.kingsubash.com/simple-page-preloader-with-css-and-javascript) for the preloader code which I initially copied and then modified.
+- Credit to [W3schools](https://www.w3schools.com/howto/howto_css_modals.asp) for the modals code.
+- For coding questions: [W3schools](https://www.w3schools.com/)
+- For coding questions: [Stackoverflow](https://stackoverflow.com/)
+- For coding questions: [Slack](https://slack.com/intl/en-ie/)
+
+### Media
+
+- Background image taken from [Wikimedia Commons](<https://commons.wikimedia.org/wiki/File:Atom_symbol_as_used_in_the_logo_of_the_television_series_The_Big_Bang_Theory_(black).svg>)
+- Icons taken from [Freeicons.io](https://freeicons.io/) and [Iconfinder.com]https://www.iconfinder.com/
+
+## Acknowledgements
+
+- To my friend Guillerme for helping me along the project and to my wife who has taken care of our baby while I code.
+
+[Back to top &uarr;](#contents)

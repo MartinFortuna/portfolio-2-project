@@ -289,7 +289,7 @@ animation: rotate 0.7s linear infinite;
 .username-modal-content, .round-modal-content {
   text-align: center;
   background-color: #f8cca0;
-  margin: 200px auto; 
+  margin: 100px auto; 
   padding: 20px;
   border: 1px solid #888;
   width: auto;
@@ -299,11 +299,11 @@ animation: rotate 0.7s linear infinite;
 .sheldon-modal-content, .player-modal-content{
   text-align: center;
   background-color: #f8cca0;
-  margin: 200px auto; 
+  margin: 100px auto; 
   padding: 20px;
   border: 1px solid #888;
   width: auto;
-  height: auto; 
+  height: 220px; 
 }
 
 .table-container{
