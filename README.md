@@ -136,6 +136,7 @@ The user can see the website's name, the game name, and descriptive icons that h
 
 The round result modal appears after the user has made the selection, it will outline the round winner, provide the user's and Sheldon's choice, and also the round rule.
 The user will be given the button to move forward to the next round.
+
 ![Round result modal](/readme/feature-screenshots/round-modal.png)
 
 ### Game winner modal
